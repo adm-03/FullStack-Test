@@ -398,10 +398,108 @@ footer {
 /* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 800px) {
     .hero-text h1 { font-size: 2.8rem; }
-    .nav-links { gap: 1rem; }
     .contact-wrapper { grid-template-columns: 1fr; }
     .container { padding: 0 1.2rem; }
     h2 { font-size: 2rem; }
     .hero-stats { flex-wrap: wrap; gap: 1rem; }
     .approach-flex { flex-direction: column; }
+
+    /* Скрываем шестеренки на мобилке */
+    .hero-art, .ai-glyph {
+        display: none !important;
+    }
+
+    /* 1. НАСТРАИВАЕМ НАВБАР В ОДНУ СТРОКУ */
+    .navbar {
+        padding: 0.8rem 0 !important;
+    }
+
+    .nav-container {
+        display: flex !important;
+        flex-direction: row !important; /* Логотип слева, бургер справа */
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100%;
+        position: relative;
+    }
+
+    /* 2. РИСУЕМ ТРИ ПАЛОЧКИ ДЛЯ БУРГЕРА */
+    .nav-container::after {
+        content: "☰";
+        color: white;
+        font-size: 1.6rem;
+        cursor: pointer;
+        display: block !important;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent; /* Убираем синюю вспышку при клике */
+    }
+
+    /* 3. ПРЕВРАЩАЕМ ССЫЛКИ В СКРЫТУЮ ШТОРКУ */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Выпадает ровно под шапкой */
+        left: 0;
+        width: 100%;
+        background: rgba(5, 5, 10, 0.96); /* Твой фирменный темный фон с размытием */
+        backdrop-filter: blur(16px);
+        flex-direction: column !important;
+        padding: 0 !important; /* Изначально скрыто */
+        gap: 0 !important;
+        border-bottom: 1px solid rgba(108, 99, 255, 0);
+        
+        /* Плавная анимация схлопывания по высоте */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .nav-links a {
+        text-align: center !important;
+        width: 100% !important;
+        padding: 0 !important; /* Скрыты */
+        opacity: 0;
+        box-sizing: border-box !important;
+        -webkit-tap-highlight-color: transparent; /* Убираем синюю вспышку */
+    }
+
+    /* 4. МАГИЯ CSS: Клик/Тап на шапку открывает меню, повторный клик — закрывает */
+    /* Благодаря :focus-within меню будет держать состояние, пока юзер взаимодействует с ним */
+    .nav-container:focus-within .nav-links,
+    .nav-container:active .nav-links {
+        max-height: 220px; /* Выдвигаем шторку наружу */
+        opacity: 1;
+        padding: 1.5rem 0 !important;
+        gap: 1.2rem !important;
+        border-bottom: 1px solid rgba(108, 99, 255, 0.2);
+    }
+
+    /* Плавно проявляем ссылки внутри открытой шторки */
+    .nav-container:focus-within .nav-links a,
+    .nav-container:active .nav-links a {
+        opacity: 1;
+        padding: 0.6rem !important;
+    }
+
+    /* Остальные твои фиксы контента (формы, инпуты) */
+    .contact-info, .contact-form {
+        padding: 1.5rem !important;
+        border-radius: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    input, textarea {
+        padding: 0.8rem !important;
+        font-size: 1rem !important;
+        box-sizing: border-box !important;
+    }
+
+    section, 
+    #about, 
+    #cases, 
+    #contact,
+    form {
+        scroll-margin-top: 60px !important; 
+    }
 }
