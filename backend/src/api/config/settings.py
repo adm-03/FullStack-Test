@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     SMTP_PORT: int = 465
     SMTP_USER: str = "your_bot_mail@mail.ru"
     SMTP_PASSWORD: str = "your_app_password"
+    # seconds to wait for SMTP connection/send before timing out
+    SMTP_TIMEOUT: int = 10
 
     GROQ_API_KEY: str = "mock_gsk_key"
 

@@ -1,9 +1,7 @@
-
 const aiBtn = document.getElementById('aiInspireBtn');
 const aiMsgDiv = document.getElementById('aiMessageBlock');
 
-
-const BACKEND_URL = 'http://localhost:8000';
+const BACKEND_URL = 'https://adm-03-fullstack-test-70de.twc1.net';
 
 aiBtn.addEventListener('click', async () => {
     aiBtn.disabled = true;
@@ -12,6 +10,11 @@ aiBtn.addEventListener('click', async () => {
     try {
         const response = await fetch(`${BACKEND_URL}/api/ai-tip`);
         
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+            throw new Error(`Сервер вернул ошибку ${response.status} (не JSON)`);
+        }
+
         if (!response.ok) {
             throw new Error('Не удалось получить ответ от ИИ');
         }
@@ -70,6 +73,12 @@ form.addEventListener('submit', async (e) => {
             body: JSON.stringify(payload)
         });
 
+        
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+            throw new Error(`Ошибка сервера (${response.status}). На бэкенде закрыты порты или упал SMTP.`);
+        }
+
         const result = await response.json();
 
         if (!response.ok) {
@@ -79,6 +88,9 @@ form.addEventListener('submit', async (e) => {
                 }
                 throw new Error(result.detail.detail || result.detail);
             }
+            if (response.status === 429) {
+                throw new Error("Слишком много запросов. Подождите минуту.");
+            }
             throw new Error(result.message || 'Ошибка отправки');
         }
 
@@ -86,7 +98,7 @@ form.addEventListener('submit', async (e) => {
         form.reset();
 
     } catch (err) {
-        statusDiv.innerHTML = `<span style="color:#FFA5A5;">❌ Ошибка: ${err.message || 'повторите попытку'}</span>`;
+        statusDiv.innerHTML = `<span style="color:#FFA5A5;">❌ Ошибка: ${err.message}</span>`;
     } finally {
         submitBtn.disabled = false;
         
