@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Матвей Глобов — Backend‑разработчик / Python & AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">◈ MATVEY GLOBOV</div>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">Обо мне</a>
+                <a href="#cases" class="nav-link">Проекты</a>
+                <a href="#contact" class="nav-link">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badge">✦ Backend · AI · FastAPI ✦</div>
+                    <h1>Матвей Глобов<br><span class="gradient-name">backend разработчик</span></h1>
+                    <p class="hero-desc">Строю надёжные API, интегрирую AI, автоматизирую процессы. Python, FastAPI, PostgreSQL, Docker — мой стек.</p>
+                    <div class="hero-stats">
+                        <div class="stat"><span class="stat-number">1+</span><br>год коммерческого опыта</div>
+                        <div class="stat"><span class="stat-number">10+</span><br>учебных проектов</div>
+                        <div class="stat"><span class="stat-number">⚡</span><br>быстрая обучаемость</div>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <div class="ai-glyph">🐍⚙️</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>Как я работаю</h2>
+                <div class="section-sub">чистый код · тесты · AI-интеграции</div>
+                <div class="approach-flex">
+                    <div class="approach-card">
+                        <h3>🧠 Подход</h3>
+                        <p>Пишу читаемый, документированный код на Python. Использую типизацию, тесты (pytest), следую принципам SOLID. Люблю автоматизировать рутину и строить отказоустойчивые системы.</p>
+                    </div>
+                    <div class="approach-card">
+                        <h3>🤖 AI в работе</h3>
+                        <p>Интегрирую LLM (OpenAI, локальные модели) в бэкенд: чат-боты, суммаризация, AI-помощники. Также использую AI для рефакторинга, генерации тестов и документации.</p>
+                    </div>
+                </div>
+                <div class="tech-grid">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">FastAPI</span>
+                    <span class="tech-item">PostgreSQL</span>
+                    <span class="tech-item">Docker</span>
+                    <span class="tech-item">Redis</span>
+                    <span class="tech-item">Celery / arq</span>
+                    <span class="tech-item">SQLAlchemy</span>
+                    <span class="tech-item">OpenAI API</span>
+                    <span class="tech-item">Git / CI/CD</span>
+                    <span class="tech-item">Linux</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="cases">
+            <div class="container">
+                <h2>Проекты и опыт</h2>
+                <div class="section-sub">реальные задачи · backend · AI</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">📦</div>
+                        <div class="project-title">nil.it</div>
+                        <div class="project-tag">FastAPI · PostgreSQL · Docker</div>
+                        <p class="project-desc">Разрабатывал backend для внутренней CRM: авторизация, управление заказами, интеграция с Банками. Оптимизировал SQL-запросы, настроил миграции (Alembic).</p>
+                        <div class="project-role">Личный вклад: проектирование API, реализация бизнес-логики.</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🤖</div>
+                        <div class="project-title">AI-ассистент для поддержки</div>
+                        <div class="project-tag">OpenAI · FastAPI · Redis</div>
+                        <p class="project-desc">Создал чат-бота с памятью через Redis и генерацией ответов через GPT. Обработка потоковых ответов, кеширование, fallback на локальные модели.</p>
+                        <div class="project-role">архитектура, интеграция API, промпт-инжиниринг</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🕷️</div>
+                        <div class="project-title">Парсинг + ML-анализ</div>
+                        <div class="project-tag">Selenium · TensorFlow · OpenCV</div>
+                        <p class="project-desc">Собирал данные с маркетплейсов, обучал нейросеть для классификации товаров. Автоматизация ETL-процессов.</p>
+                        <div class="project-role">разработка пайплайна, настройка моделей</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">⚙️</div>
+                        <div class="project-title">Telegram-бот для склада</div>
+                        <div class="project-tag">aiogram · PostgreSQL · arq</div>
+                        <p class="project-desc">Бот для учёта товаров: уведомления о низких остатках, отчёты, роль администратора. Фоновая обработка задач через arq.</p>
+                        <div class="project-role">полный цикл: от базы до деплоя</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="ai-showcase">
+                    <div class="ai-flex">
+                        <div>
+                            <h3 style="margin-bottom: 0.4rem; font-size: 1.6rem;">✨ AI-интеграция в действии</h3>
+                            <p style="color: #B0B0CE;">Генерация полезного совета для разработчика</p>
+                        </div>
+                        <button class="ai-button" id="aiInspireBtn">🎲 AI совет</button>
+                    </div>
+                    <div class="ai-response" id="aiMessageBlock">
+                        Нажмите, чтобы получить порцию вдохновения от AI ✨
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Связаться</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Контакты</h3>
+                        <a href="mailto:globov.motya@mail.ru" class="contact-link">📧 globov.motya@mail.ru</a>
+                        <a href="tel:+79130625729" class="contact-link">📞 +7 (913) 062-57-29</a>
+                        <div class="contact-link">🌐 GitHub: @adm-03</div>
+                        <div class="contact-link">💬 Telegram: @TwentyTwo20</div>
+                        <div style="margin-top: 2rem; font-size: 0.9rem;">Отвечаю в течение дня. Готов к удалённой работе, проектам и офферу ✦</div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="feedbackForm">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Ваше имя" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder="Телефон" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="4" placeholder="Комментарий или предложение о работе" required></textarea>
+                            </div>
+                            <button type="submit" id="sendBtn">Отправить ⟶</button>
+                            <div id="formStatus" class="status-message"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Матвей Глобов — backend-разработчик, Python, FastAPI, AI</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
