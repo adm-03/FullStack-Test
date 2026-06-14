@@ -21,9 +21,16 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI( title="Portfolio Presentation API", description="Backend для формы обратной связи и ИИ-ассистента", lifespan=lifespan)
 
+origins = [
+    "https://adm-03.github.io",  # 👈 Замени на точный URL твоего GitHub Pages
+    "http://localhost:5500",         # Для тестов дома через VS Code Live Server
+    "http://127.0.0.1:5500",
+    "http://localhost:8000",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

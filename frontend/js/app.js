@@ -1,7 +1,7 @@
 const aiBtn = document.getElementById('aiInspireBtn');
 const aiMsgDiv = document.getElementById('aiMessageBlock');
 
-const BACKEND_URL = 'https://adm-03-fullstack-test-70de.twc1.net';
+const BACKEND_URL = 'https://fullstack-back.twc1.net';
 
 aiBtn.addEventListener('click', async () => {
     aiBtn.disabled = true;
